@@ -1,0 +1,27 @@
+{
+  "name": "project-2",
+  "version": "1.0.0",
+  "description": "InstanewsApp",
+  "main": "\u001b[js)",
+  "scripts": {
+    "test": "heloo??"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mojopoly/InstanewsApp.git"
+  },
+  "author": "Cyrus Eslamian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mojopoly/InstanewsApp/issues"
+  },
+  "homepage": "https://github.com/mojopoly/InstanewsApp#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "eslint": "^5.12.1",
+    "gulp": "^4.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-terser": "^1.1.7"
+  },
+  "dependencies": {}
+}
