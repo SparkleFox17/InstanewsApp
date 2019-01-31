@@ -1,0 +1,315 @@
+
+@import 'partials/reset';
+@import 'partials/font';
+
+/* variables*/
+
+
+/* Design */
+$base-font-size: 16px;
+$base-font-color: #ffffff;
+$base-font-family: 'OpenSans-Light', Arial, sans-serif;
+$base-padding: 5% 5%;
+
+* {
+    box-sizing: border-box;
+  }
+
+body{
+    background-color: #000;
+    font-size: $base-font-size;
+    font-family: $base-font-family;
+    color: $base-font-color;
+}
+
+/* selection menu */
+
+.mobile-start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    padding-top: 35%;
+    h1{
+        padding: $base-padding;
+    }
+}
+
+/* image grid */
+.main{
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto;
+    justify-content: center;
+    .nyt-logo{
+        // position: relative;
+        width: 80%;
+    }
+    a{
+        opacity: 0;
+        font-size: $base-font-size;
+        background-color: rgba(102, 101, 101, 0.8);
+        line-height: 1.5em;
+        display: flex;
+        align-items: flex-end;
+        transform: translateY(22em);
+        z-index: 1;
+        color: rgb(255, 255, 255);
+        width: 100%;
+    //     &:hover {
+    //         text-decoration: underline;
+    //     }
+    //     &:visited {
+    //      color: rgb(215, 26, 240);
+    // }
+    }
+    li{
+        height: 400px;
+    }
+}
+
+@keyframes slide {
+    0% {
+        // .nyt-logo img {
+        //     transform: scale(.75);
+        // };
+
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-40%);
+    }
+  }
+  .mobile-start{
+    animation-name: slide;
+    animation-duration: .8s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-play-state: paused; 
+    animation-fill-mode: forwards;
+
+  }
+  
+/* Loader GIF */
+           
+.loader-GIF{
+    display: none;
+}
+/* Footer */
+
+.footer-container{
+    color: #c2c2c2;
+    // position: absolute;
+    // // bottom: 1%;
+    display: flex;
+    justify-content: center;
+    padding-top: 20%;
+}
+
+/* RESPONSIVE BREAKPOINT 1: 600 PIXELS */
+
+@media screen and (min-width: 600px) {
+    @keyframes slide {
+        0% {
+            transform: translateY(0px);
+        }
+        100% {
+            transform: translateY(-50%);
+        }
+      }
+      .mobile-start{
+        animation-name: slide;
+        animation-duration: .8s;
+        animation-timing-function: ease-in-out;
+        animation-delay: 0s;
+        animation-play-state: paused; 
+        animation-fill-mode: forwards;
+    
+      }
+    .mobile-start{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        img{
+            width: 60%;
+            height: 70%;
+            padding-left: 15%;
+        }
+        .nyt-logo{
+            width:50%;
+        }
+        h1{
+            padding: 0%;
+            width: 23%;
+        }
+        // select{
+        //     padding: 1%;
+        // }
+    }
+        .main{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto auto auto;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+            a {
+                width: 100%;
+            }
+
+        }
+
+}
+
+/* RESPONSIVE BREAKPOINT 1: 1240 PIXELS */
+
+@media screen and (min-width: 1240px) {
+    .mobile-start{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        h1{
+            width: 10%;
+        }
+    }
+    .main{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto auto auto auto;
+        // img{
+        //     width: 100%;
+        //     height: 100%;
+        // }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// //use sass functions for changing colors: darken
+// $link-color: #800800;
+// //create mixin: on top of extend, you can pass paramters to it
+// @mixin primary-links {
+//     color: blue;
+//     text-decoration: none;
+// }
+// a {
+//     @include primary-links
+// }
+
+// @mixin headline($color, $size){
+//     color: $color;
+//     font-size: $size;
+// }
+// h1 {
+//     @include headline($brand-red,22px)
+// }
+
+// $desktop-width: 1240px;
+// @mixin Desktop {
+//     @media only screen and (min-width: $desktop-width) {
+//         @content
+//     }
+// }
+// @include Desktop() {
+//     li {
+//         color: blue;
+//     }
+//     p {
+//         font-size: 1.5em;
+//     }
+// }
+// //create extend using a dot in beginning and using it in any other class
+// .message {
+//     border: 3px solid #ccc;
+//     padding: 5%;
+//     color: #333;
+// }
+// .success {
+//     @extend .message;
+//     border-color: green;
+// }
+// //we can use % in message and call it as placeholder, it will still pass its property
+// //but doesnt name it in css
+// %base-border {
+//     border: 3px solid #ccc;
+//     padding: 5%;
+// }
+// .message2{
+//     @extend %base-border;
+// }
+
+
+// //create custom function
+// $text-color: darkgreen;
+// @function set-contrast-color($color) {
+//     @if (lightness($color) > 50) {
+//         @return #000;
+//     } @else {
+//         @return #fff;
+//     }
+// }
+
+// h1 {
+//     color: $text-color;
+//     background: set-contrast-color($text-color)
+// }
+// a {
+//     color : $link-color;
+//     //Darken color
+//     &:hover {
+//         color: darken($link-color, 50%)
+//     }
+//     &:visited {
+//         color: mix($link-color, #fff, 50%)
+//     }
+// }
+
+// .main-navigation {
+//     margin-left: 0;
+//     li {
+//     color: $brand-red;
+//     }
+//     p {
+//     font-size: 15px;
+//     }
+//     margin-bottom: round($base-margin * 1.5);
+// }
+
+// a {
+//     color: red;
+//     &:hover {
+//         text-decoration: underline;
+//     }
+// }
+
+// // ampersand on outside to make calling before main element adding widget before element h3, we use & after widget
+// h3 {
+//     font-size: 1.5em;
+//     .widget & {
+//         font-size: 1.25em;
+//     }
+// }
+

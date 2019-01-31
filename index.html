@@ -2,30 +2,45 @@
 <html>
 
   <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-          <link href="CSS/style.css" type="text/css" rel="stylesheet">
-          <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="Sass/css/main.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   </head>
 
-
   <body>
-      <div class="itunes-widget">
-          <form action="#" id="album-search">
-            <div class="artist-search">
-              <input type="text" name="artist_name" id="artist-name" placeholder="Enter artist first and last name"/>
-              <input type="submit" class= "btn" value="Get Albums" />
-            </div>
-          </form>
-          <ul class="album-list"></ul>
+    <div class="all-body">
+      <div class = "nav-slide">
+      <div class="mobile-start">
+      <div class ="nyt-logo"><img src="Snapshots/nyt-logo.png" height="200px" width="200px" alt="NYT Logo"></div>
+        <h1>Choose a section:</h1>
+        <select class="drop-down">
+          <option>Sections...</option>
+          <option value="home">Home</option>
+          <option value="arts">Arts</option>
+          <option value="business">Business</option>
+          <option value="fashion">Fashion</option>
+          <option value="sports">Sports</option>
+          <option value="technology">Tech</option>
+        </select>
         </div>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="js/main.js"></script>
-        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+      </div>
+    <div class="main">
+      <ul></ul>
+    </div>
+    <div class='loader-GIF'><img src='Snapshots\loader2.gif' width= "100px" height="100px" />
+    </div>
+      <div class = "footer-container">
+        <h1>Copyright 2016 INSTANEWS</h1>
+      </div>
+    </div>
+
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      <script src="js/main.js"></script>
   </body>
 
 </html>
