@@ -28,5 +28,7 @@
     "gulp-terser": "^1.1.7",
     "sass": "^1.16.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^4.2.1"
+  }
 }

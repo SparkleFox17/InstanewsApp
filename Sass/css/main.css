@@ -73,6 +73,7 @@ body {
 
 /* selection menu */
 .mobile-start {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,31 +83,34 @@ body {
 .mobile-start h1 {
   padding: 5% 5%;
 }
-
-/* image grid */
-.main {
-  display: grid;
-  width: 100%;
-  grid-template-columns: auto;
+.mobile-start img {
+  width: 50%;
+}
+.mobile-start .nyt-logo {
+  display: flex;
   justify-content: center;
 }
-.main .nyt-logo {
-  width: 80%;
+
+/* image grid */
+.anchorTag {
+  position: relative;
 }
-.main a {
-  opacity: 0;
-  font-size: 16px;
-  background-color: rgba(102, 101, 101, 0.8);
-  line-height: 1.5em;
-  display: flex;
-  align-items: flex-end;
-  transform: translateY(22em);
-  z-index: 1;
+.anchorTag p {
   color: white;
+  background: rgba(0, 0, 0, 0.5);
   width: 100%;
+  height: 50px;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  display: none;
 }
-.main li {
-  height: 400px;
+.anchorTag:hover p {
+  display: block;
+}
+.anchorTag img {
+  width: 100%;
+  height: 250px;
 }
 
 @keyframes slide {
@@ -114,13 +118,13 @@ body {
     transform: translateY(0px);
   }
   100% {
-    transform: translateY(-40%);
+    transform: translateY(-30%);
   }
 }
 .mobile-start {
   animation-name: slide;
   animation-duration: 0.8s;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: linear;
   animation-delay: 0s;
   animation-play-state: paused;
   animation-fill-mode: forwards;
@@ -146,13 +150,15 @@ body {
       transform: translateY(0px);
     }
     100% {
-      transform: translateY(-50%);
+      transform: translateY(-40%);
     }
   }
   .mobile-start {
+    width: 100%;
+    padding-right: 40%;
     animation-name: slide;
     animation-duration: 0.8s;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: linear;
     animation-delay: 0s;
     animation-play-state: paused;
     animation-fill-mode: forwards;
@@ -163,47 +169,55 @@ body {
     flex-flow: row nowrap;
     justify-content: center;
   }
-  .mobile-start img {
-    width: 60%;
-    height: 70%;
-    padding-left: 15%;
+  .mobile-start h1 {
+    padding: 0;
+    width: 30%;
   }
   .mobile-start .nyt-logo {
     width: 50%;
   }
-  .mobile-start h1 {
-    padding: 0%;
-    width: 23%;
-  }
-
-  .main {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto;
-  }
-  .main img {
-    width: 100%;
-    height: 100%;
-  }
-  .main a {
-    width: 100%;
-  }
 }
+.loader-GIF {
+  display: none;
+}
+
 /* RESPONSIVE BREAKPOINT 1: 1240 PIXELS */
 @media screen and (min-width: 1240px) {
-  .mobile-start {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+  @keyframes slide {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
   }
-  .mobile-start h1 {
-    width: 10%;
+  .mobile-start {
+    width: 100%;
+    padding-right: 40%;
+    padding-top: 20%;
+    animation-name: slide;
+    animation-duration: 0.8s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
   }
 
-  .main {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-template-rows: auto auto auto auto;
+  .mobile-start {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+  .mobile-start h1 {
+    padding: 0;
+    width: 20%;
+  }
+  .mobile-start .nyt-logo {
+    width: 50%;
+  }
+
+  .loader-GIF {
+    display: none;
   }
 }
 

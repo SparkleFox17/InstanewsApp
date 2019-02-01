@@ -43,14 +43,10 @@ gulp.task('watch' , function() {
         baseDir: './'
         }
     });
-    gulp.watch('js/*.js', gulp.series(['scripts', 'eslint']));
+    gulp.watch(['js/*.js', './scss/*.scss'], gulp.series(['sass', 'scripts', 'eslint',]));
     gulp.watch('./*html').on("change", browserSync.reload);
 
 });
-gulp.task('sayHello', function(done){
-    console.log('Hello world!');
-    done();
 
-});
 
-gulp.task('default', gulp.series(['sayHello', 'watch']));
+gulp.task('default', gulp.series(['watch']));

@@ -25,6 +25,7 @@ body{
 /* selection menu */
 
 .mobile-start{
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,74 +34,64 @@ body{
     h1{
         padding: $base-padding;
     }
+    img{
+        width:50%;
+
+    }
+    .nyt-logo{
+        display: flex;
+        justify-content: center;
+    }
 }
 
+
 /* image grid */
-.main{
-    display: grid;
-    width: 100%;
-    grid-template-columns: auto;
-    justify-content: center;
-    .nyt-logo{
-        // position: relative;
-        width: 80%;
-    }
-    a{
-        opacity: 0;
-        font-size: $base-font-size;
-        background-color: rgba(102, 101, 101, 0.8);
-        line-height: 1.5em;
-        display: flex;
-        align-items: flex-end;
-        transform: translateY(22em);
-        z-index: 1;
-        color: rgb(255, 255, 255);
+.anchorTag {
+    position: relative;
+    p{
+        color: white;
+        background: rgba(0,0,0,.5);
         width: 100%;
-    //     &:hover {
-    //         text-decoration: underline;
-    //     }
-    //     &:visited {
-    //      color: rgb(215, 26, 240);
-    // }
+        height: 50px;
+        overflow: hidden;
+        position: absolute;
+        bottom: 0;
+        display:none;
     }
-    li{
-        height: 400px;
+    &:hover p {
+        display: block;
+    }
+    img{
+        width: 100%;
+        height: 250px;
     }
 }
 
 @keyframes slide {
     0% {
-        // .nyt-logo img {
-        //     transform: scale(.75);
-        // };
-
         transform: translateY(0px);
     }
     100% {
-        transform: translateY(-40%);
+        transform: translateY(-30%);
     }
   }
   .mobile-start{
     animation-name: slide;
     animation-duration: .8s;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: linear;
     animation-delay: 0s;
     animation-play-state: paused; 
     animation-fill-mode: forwards;
-
   }
   
 /* Loader GIF */
-           
 .loader-GIF{
     display: none;
 }
-/* Footer */
 
+/* Footer */
 .footer-container{
     color: #c2c2c2;
-    // position: absolute;
-    // // bottom: 1%;
     display: flex;
     justify-content: center;
     padding-top: 20%;
@@ -114,99 +105,77 @@ body{
             transform: translateY(0px);
         }
         100% {
-            transform: translateY(-50%);
+            transform: translateY(-40%);
         }
-      }
-      .mobile-start{
+    }
+    .mobile-start{
+        // height: 200px;
+        width: 100%;
+        padding-right: 40%;
         animation-name: slide;
         animation-duration: .8s;
-        animation-timing-function: ease-in-out;
+        animation-timing-function: linear;
         animation-delay: 0s;
         animation-play-state: paused; 
         animation-fill-mode: forwards;
-    
-      }
+    }
     .mobile-start{
         display: flex;
         flex-flow: row nowrap;
         justify-content: center;
-        img{
-            width: 60%;
-            height: 70%;
-            padding-left: 15%;
+        h1{
+            padding: 0;
+            width: 30%;
         }
         .nyt-logo{
-            width:50%;
+            width: 50%;
         }
-        h1{
-            padding: 0%;
-            width: 23%;
-        }
-        // select{
-        //     padding: 1%;
-        // }
     }
-        .main{
-            display: grid;
-            grid-template-columns: auto auto auto;
-            grid-template-rows: auto auto auto;
-            img{
-                width: 100%;
-                height: 100%;
-            }
-            a {
-                width: 100%;
-            }
+    }
 
-        }
-
+.loader-GIF{
+    display: none;
 }
 
 /* RESPONSIVE BREAKPOINT 1: 1240 PIXELS */
 
 @media screen and (min-width: 1240px) {
-    .mobile-start{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        h1{
-            width: 10%;
+    @keyframes slide {
+        0% {
+            transform: translateY(0px);
+        }
+        100% {
+            transform: translateY(-50%);
         }
     }
-    .main{
-        display: grid;
-        grid-template-columns: auto auto auto auto;
-        grid-template-rows: auto auto auto auto;
-        // img{
-        //     width: 100%;
-        //     height: 100%;
-        // }
-
+    .mobile-start{
+        // height: 200px;
+        width: 100%;
+        padding-right: 40%;
+        padding-top: 20%;
+        animation-name: slide;
+        animation-duration: .8s;
+        animation-timing-function: linear;
+        animation-delay: 0s;
+        animation-play-state: paused; 
+        animation-fill-mode: forwards;
+    }
+    .mobile-start{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        h1{
+            padding: 0;
+            width: 20%;
+        }
+        .nyt-logo{
+            width: 50%;
+        }
+    }
+    .loader-GIF{
+        display: none;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // //use sass functions for changing colors: darken
 // $link-color: #800800;
@@ -284,32 +253,6 @@ body{
 //     }
 //     &:visited {
 //         color: mix($link-color, #fff, 50%)
-//     }
-// }
-
-// .main-navigation {
-//     margin-left: 0;
-//     li {
-//     color: $brand-red;
-//     }
-//     p {
-//     font-size: 15px;
-//     }
-//     margin-bottom: round($base-margin * 1.5);
-// }
-
-// a {
-//     color: red;
-//     &:hover {
-//         text-decoration: underline;
-//     }
-// }
-
-// // ampersand on outside to make calling before main element adding widget before element h3, we use & after widget
-// h3 {
-//     font-size: 1.5em;
-//     .widget & {
-//         font-size: 1.25em;
 //     }
 // }
 
